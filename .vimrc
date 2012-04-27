@@ -22,6 +22,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'robhudson/snipmate_for_django'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'jcrocholl/pep8'
 
 filetype plugin on
 filetype plugin indent on
@@ -32,13 +33,17 @@ set showcmd
 set number
 set cursorline
 set smartcase
+set incsearch
+set hlsearch
+set gfn=Monaco
 
 syntax on
 
 if has("gui_running")
 "  colorscheme desert
-  colorscheme solarized
-  set bg=light
+" colorscheme solarized
+  colorscheme jellybeans
+" set bg=light
 else
   colorscheme jellybeans
 endif
@@ -56,8 +61,6 @@ set t_Co=256
 
 set sts=4
 
-set incsearch
-set hlsearch
 "White spaces"
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -107,4 +110,3 @@ inoremap <Esc>D <left>
 
 "Exec python"
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
-set gfn=Monaco
