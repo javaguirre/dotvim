@@ -12,7 +12,7 @@ Installation
 
 2. Clone repo
 
-        $ git clone git@github.com:javaguirre/dotvim.git ~/.vim
+        $ git clone git://github.com/javaguirre/dotvim.git ~/.vim
 
 3. Create symlinks
 
