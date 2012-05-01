@@ -23,6 +23,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'robhudson/snipmate_for_django'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'jcrocholl/pep8'
+Bundle 'groenewege/vim-less'
 
 filetype plugin on
 filetype plugin indent on
