@@ -8,22 +8,22 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'mattn/gist-vim'
-Bundle 'vim-scripts/Vim-Blog'
+"Bundle 'mattn/gist-vim'
 Bundle 'kana/vim-smartinput'
 Bundle 'javaguirre/snipmate.vim'
-Bundle 'jnurmine/Zenburn'
+"Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'robhudson/snipmate_for_django'
+"Bundle 'robhudson/snipmate_for_django'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'jcrocholl/pep8'
-Bundle 'groenewege/vim-less'
+"Bundle 'groenewege/vim-less'
+"Bundle 'timcharper/textile.vim'
 
 filetype plugin on
 filetype plugin indent on
@@ -100,14 +100,15 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 "tmux"
-nnoremap <Esc>A <up>
-nnoremap <Esc>B <down>
-nnoremap <Esc>C <right>
-nnoremap <Esc>D <left>
-inoremap <Esc>A <up>
-inoremap <Esc>B <down>
-inoremap <Esc>C <right>
-inoremap <Esc>D <left>
+"nnoremap <Esc>A <up>
+"nnoremap <Esc>B <down>
+"nnoremap <Esc>C <right>
+"nnoremap <Esc>D <left>
+"inoremap <Esc>A <up>
+"inoremap <Esc>B <down>
+"inoremap <Esc>C <right>
+"inoremap <Esc>D <left>
 
 "Exec python"
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
+let g:pep8_map='<leader>8'
