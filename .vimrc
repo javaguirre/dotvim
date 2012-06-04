@@ -22,6 +22,8 @@ Bundle 'vim-scripts/taglist.vim'
 "Bundle 'robhudson/snipmate_for_django'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'jcrocholl/pep8'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/comments.vim'
 "Bundle 'groenewege/vim-less'
 "Bundle 'timcharper/textile.vim'
 
