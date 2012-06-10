@@ -8,12 +8,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'nanotech/jellybeans.vim'
-"Bundle 'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'mileszs/ack.vim'
+Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'git://git.wincent.com/command-t.git'
-"Bundle 'mattn/gist-vim'
+Bundle 'mattn/gist-vim'
 Bundle 'kana/vim-smartinput'
 Bundle 'javaguirre/snipmate.vim'
 "Bundle 'jnurmine/Zenburn'
@@ -24,8 +24,9 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'jcrocholl/pep8'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/comments.vim'
-"Bundle 'groenewege/vim-less'
-"Bundle 'timcharper/textile.vim'
+Bundle 'vim-scripts/TwitVim'
+Bundle 'groenewege/vim-less'
+Bundle 'timcharper/textile.vim'
 
 filetype plugin on
 filetype plugin indent on
@@ -114,3 +115,7 @@ let g:miniBufExplModSelTarget = 1
 "Exec python"
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
 let g:pep8_map='<leader>8'
+let twitvim_enable_python = 1
+let twitvim_api_root = "https://api.twitter.com/1"
+let twitvim_count = 50
+let twitvim_browser_cmd="chromium"
