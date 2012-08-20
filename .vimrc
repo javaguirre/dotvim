@@ -15,11 +15,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'mattn/gist-vim'
 Bundle 'kana/vim-smartinput'
-Bundle 'javaguirre/snipmate.vim'
-"Bundle 'jnurmine/Zenburn'
+Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
-"Bundle 'robhudson/snipmate_for_django'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'jcrocholl/pep8'
 Bundle 'tpope/vim-surround'
@@ -27,6 +25,14 @@ Bundle 'vim-scripts/comments.vim'
 Bundle 'vim-scripts/TwitVim'
 Bundle 'groenewege/vim-less'
 Bundle 'timcharper/textile.vim'
+Bundle 'javaguirre/Pydiction'
+Bundle 'git://github.com/nsf/gocode.git'
+Bundle 'xolox/vim-notes.git'
+"https://github.com/bkad/CamelCaseMotion.git
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "javaguirre/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
 
 filetype plugin on
 filetype plugin indent on
@@ -36,6 +42,7 @@ set ruler
 set showcmd
 set number
 set cursorline
+set cursorcolumn
 set smartcase
 set incsearch
 set hlsearch
@@ -45,9 +52,9 @@ syntax on
 
 if has("gui_running")
 "  colorscheme desert
-" colorscheme solarized
-  colorscheme jellybeans
-" set bg=light
+ colorscheme solarized
+" colorscheme jellybeans
+ set bg=light
 else
   colorscheme jellybeans
 endif
@@ -97,7 +104,7 @@ noremap <A-k> gt
 imap <c-space> <c-x><c-o>
 
 "minibufexpl"
-let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
@@ -113,9 +120,12 @@ let g:miniBufExplModSelTarget = 1
 "inoremap <Esc>D <left>
 
 "Exec python"
-map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
+"map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
 let g:pep8_map='<leader>8'
 let twitvim_enable_python = 1
 let twitvim_api_root = "https://api.twitter.com/1"
 let twitvim_count = 50
 let twitvim_browser_cmd="chromium"
+let g:notes_directory = '~/Documentos/vim_notes'
+let g:notes_suffix = '.md'
+au BufRead,BufNewFile *.md set filetype=markdown
