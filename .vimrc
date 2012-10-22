@@ -19,7 +19,6 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'jcrocholl/pep8'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/comments.vim'
 Bundle 'vim-scripts/TwitVim'
@@ -33,6 +32,8 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "javaguirre/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
+Bundle "vim-scripts/phpvim"
+Bundle "ocim/htmljinja.vim"
 
 filetype plugin on
 filetype plugin indent on
@@ -51,10 +52,8 @@ set gfn=Monaco
 syntax on
 
 if has("gui_running")
-"  colorscheme desert
- colorscheme solarized
-" colorscheme jellybeans
- set bg=light
+  colorscheme solarized
+  set bg=light
 else
   colorscheme jellybeans
 endif
@@ -80,12 +79,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 "match performance
-
-""source /home/javaguirre/.vim/ftplugin/xml.vim
-""autocmd FileType python runtime! /home/javaguirre/.vim/autoload/pythoncomplete.vim
-""autocmd FileType php runtime! /home/javaguirre/.vim/autoload/phpcomplete.vim
-""autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
-""autocmd BufNewFile,BufRead *.html source ~/.vim/ftplugin/xml.vim
 
 "Keys"
 nmap <F2> :NERDTree<CR>
@@ -121,7 +114,6 @@ let g:miniBufExplModSelTarget = 1
 
 "Exec python"
 "map <buffer> <S-e> :w<CR>:!/usr/bin/env python2 % <CR>
-let g:pep8_map='<leader>8'
 let twitvim_enable_python = 1
 let twitvim_api_root = "https://api.twitter.com/1"
 let twitvim_count = 50
@@ -129,3 +121,7 @@ let twitvim_browser_cmd="chromium"
 let g:notes_directory = '~/Documentos/vim_notes'
 let g:notes_suffix = '.md'
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.twig set syntax=htmljinja
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
