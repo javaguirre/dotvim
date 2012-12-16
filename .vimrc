@@ -34,6 +34,7 @@ Bundle "javaguirre/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "vim-scripts/phpvim"
 Bundle "ocim/htmljinja.vim"
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin on
 filetype plugin indent on
@@ -121,6 +122,7 @@ let twitvim_browser_cmd="chromium"
 let g:notes_directory = '~/Documentos/vim_notes'
 let g:notes_suffix = '.md'
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.twig set syntax=htmljinja
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
