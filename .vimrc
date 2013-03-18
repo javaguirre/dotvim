@@ -6,35 +6,32 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'mattn/gist-vim'
 Bundle 'kana/vim-smartinput'
-Bundle 'jnurmine/Zenburn'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/comments.vim'
 Bundle 'vim-scripts/TwitVim'
 Bundle 'groenewege/vim-less'
 Bundle 'timcharper/textile.vim'
-Bundle 'javaguirre/Pydiction'
 Bundle 'git://github.com/nsf/gocode.git'
 Bundle 'xolox/vim-notes.git'
-"https://github.com/bkad/CamelCaseMotion.git
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "javaguirre/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
 Bundle "vim-scripts/phpvim"
 Bundle "ocim/htmljinja.vim"
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'eglimi/vim-rust'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'nvie/vim-flake8'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-scripts/UltiSnips'
 
 filetype plugin on
 filetype plugin indent on
@@ -48,8 +45,7 @@ set cursorcolumn
 set smartcase
 set incsearch
 set hlsearch
-set gfn=Monaco
-
+set gfn=Monaco\ for\ Powerline
 syntax on
 
 if has("gui_running")
@@ -80,14 +76,17 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 "match performance
+"autocmd BufWritePost *.py call Flake8()
 
 "Keys"
 nmap <F2> :NERDTree<CR>
 imap <F2> :Vex<CR>
 nmap <F3> :TlistToggle<CR>
 imap <F3> :TlistToggle<CR>
-""nmap <F4> :Project<CR>
-""imap <F4> :Project<CR>
+nmap <Leader>o :set paste!<CR>
+nmap <Leader>c :%s/\s\+$<CR>
+nmap <Leader>b :b#<CR>
+nmap ; :CtrlPBuffer<CR>
 
 " Shortcuts for moving between tabs.
 " Alt-j to move to the tab to the left
@@ -95,13 +94,16 @@ noremap <A-j> gT
 " Alt-k to move to the tab to the right
 noremap <A-k> gt
 "Autocomplete"
-imap <c-space> <c-x><c-o>
+"imap <c-space> <c-x><c-o>
 
-"minibufexpl"
-"let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+"ctrlp
+":let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_match_window_bottom = 0
+:let g:ctrlp_match_window_reversed = 0
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+:let g:ctrlp_working_path_mode = 0
+:let g:ctrlp_dotfiles = 0
+:let g:ctrlp_switch_buffer = 0
 
 "tmux"
 "nnoremap <Esc>A <up>
@@ -121,9 +123,17 @@ let twitvim_count = 50
 let twitvim_browser_cmd="chromium"
 let g:notes_directory = '~/Documentos/vim_notes'
 let g:notes_suffix = '.md'
+
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.twig set syntax=htmljinja
+au BufRead,BufNewFile *.tpl set syntax=html
+au BufRead,BufNewFile *.jsm set syntax=javascript
+au BufRead,BufNewFile *.rb set tabstop=2
+au BufRead,BufNewFile *.rb set shiftwidth=2
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+"Jedi
+let g:jedi#popup_on_dot = 0
