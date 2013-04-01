@@ -1,2 +1,5 @@
 *:sw?
 bundle/
+doc/
+plugin/
+tmp/
