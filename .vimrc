@@ -16,7 +16,6 @@ Bundle 'kana/vim-smartinput'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/comments.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'timcharper/textile.vim'
 Bundle 'nsf/gocode'
@@ -36,6 +35,7 @@ Bundle 'Rykka/colorv.vim'
 Bundle 'vimez/vim-tmux'
 Bundle 'Yggdroot/indentLine'
 Bundle 'Shougo/neocomplcache'
+Bundle 'tpope/vim-commentary'
 
 filetype plugin on
 filetype plugin indent on
@@ -180,3 +180,7 @@ let g:neocomplcache_max_list = 30
 let g:neocomplcache_enable_fuzzy_completion = 1
 let g:neocomplcache_fuzzy_completion_start_length = 2
 let g:neocomplcache_temporary_dir = $HOME.'/.vim/tmp/neocomplcache'
+
+" Commentary
+nmap <C-c> <Plug>CommentaryLine
+xmap <C-c> <Plug>Commentary
